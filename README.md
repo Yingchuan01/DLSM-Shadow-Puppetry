@@ -14,8 +14,8 @@ The project is being developed through several major versions:
 
 | Version | Main functions                                                              | Status            |
 | ------- | --------------------------------------------------------------------------- | ----------------- |
-| v1.0    | Basic real-time body-driven shadow-puppet performance                       | Preparing release |
-| v2.0    | Planar motion retargeting and physics-mediated contact-preserving rendering | Preparing release |
+| v1.0    | Basic real-time body-driven shadow-puppet performance                       | Released |
+| v2.0    | Planar motion retargeting and physics-mediated contact-preserving rendering | Current stable release |
 | v3.0    | Video recording, export, media management, and one-click sharing            | In development    |
 
 系统按照以下路径持续迭代：
