@@ -2,9 +2,15 @@
 
 # “数影双魂”实时动捕皮影系统
 
-A Unity-based real-time body-driven digital shadow puppetry system using Kinect v2.
+## Current Release
 
-“数影双魂”是一套基于 Unity 和 Kinect v2 开发的实时动捕皮影系统。系统将人体骨骼动作实时映射至二维数字皮影角色，用于数字表演、文化展示、交互体验与相关科研活动。
+The current stable version is [DLSM Shadow Puppetry v2.0.0](https://github.com/Yingchuan01/DLSM-Shadow-Puppetry/releases/tag/v2.0.0).
+
+Version 2.0 retains the planar CCD-IK motion-retargeting framework established in Version 1.0, introduces physics-mediated contact-preserving rendering, and improves the recording and video-export workflow.
+
+当前稳定版本为 [DLSM Shadow Puppetry v2.0.0](https://github.com/Yingchuan01/DLSM-Shadow-Puppetry/releases/tag/v2.0.0)。
+
+v2.0 保留了 v1.0 已建立的平面 CCD-IK 动作重定向框架，并在此基础上新增物理介导的接触保持机制，同时完善录屏与视频导出流程。
 
 ## Overview｜项目简介
 
@@ -12,25 +18,53 @@ The DLSM Shadow Puppetry System translates markerless human body movements captu
 
 The project is being developed through several major versions:
 
-| Version | Main functions                                                              | Status            |
-| ------- | --------------------------------------------------------------------------- | ----------------- |
-| v1.0    | Basic real-time body-driven shadow-puppet performance                       | Released |
-| v2.0    | Planar motion retargeting and physics-mediated contact-preserving rendering | Current stable release |
-| v3.0    | Video recording, export, media management, and one-click sharing            | In development    |
+| Version                                                                         | Main functions                                                                          | Status                 |
+| ------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | ---------------------- |
+| [v1.0](https://github.com/Yingchuan01/DLSM-Shadow-Puppetry/releases/tag/v1.0.0) | Kinect-based real-time motion capture and planar CCD-IK shadow-puppet control           | Released               |
+| [v2.0](https://github.com/Yingchuan01/DLSM-Shadow-Puppetry/releases/tag/v2.0.0) | Physics-mediated contact-preserving rendering and improved performance recording/export | Current stable release |
+| v3.0                                                                            | Cloud upload, QR-code generation, and cross-device sharing                              | In development         |
 
-系统按照以下路径持续迭代：
 
-> 实时动作映射 → 平面动作重定向 → 物理接触保持 → 视频内容导出与传播
+系统按照以下技术路径持续迭代：
+
+> Kinect 实时动作捕捉
+> → 平面 CCD-IK 动作重定向
+> → 初步录屏与内容保存
+> → 物理介导的接触保持与录制功能完善
+> → 云端上传、二维码生成与跨设备分享
+
+The system is being developed along the following progression:
+
+> Real-time Kinect motion capture
+> → Planar CCD-IK motion retargeting
+> → Initial performance recording
+> → Physics-mediated contact preservation and improved recording/export
+> → Cloud upload, QR-code generation, and cross-device sharing
 
 ## Main Features｜主要功能
 
 * Kinect v2 markerless body tracking
 * Real-time body-driven shadow-puppet control
-* Planar skeletal motion retargeting
-* Digital character and scene presentation
-* Multi-scene shadow-puppet performance
-* Physics-mediated contact handling in Version 2.0
-* Planned video export and one-click sharing in Version 3.0
+* Planar CCD-IK skeletal motion retargeting
+* Multi-character and multi-scene shadow-puppet performance
+* Basic performance recording introduced during the transition from Version 1.0 to Version 2.0
+* Physics-mediated character–object and character–character contact handling in Version 2.0
+* Visible blocking, constrained displacement, and post-contact recovery
+* Improved recording, video export, and media management in Version 2.0
+* Planned cloud upload, QR-code generation, and cross-device sharing in Version 3.0
+
+主要功能包括：
+
+* 基于 Kinect v2 的无标记人体动作捕捉；
+* 人体动作到数字皮影角色的实时控制；
+* 基于平面 CCD-IK 的二维骨骼动作重定向；
+* 多角色、多场景数字皮影表演；
+* 在 v1.0 向 v2.0 过渡阶段初步实现表演录制；
+* v2.0 新增物理介导的角色—道具与角色—角色接触处理；
+* 支持可见阻挡、接触约束位移和接触解除后的姿态恢复；
+* v2.0 对录屏、视频导出和媒体管理功能进行完善；
+* v3.0 计划增加云端上传、二维码生成和跨设备分享。
+
 
 ## Repository Contents｜仓库内容
 
@@ -75,30 +109,90 @@ The complete Unity source project is not currently included in this public repos
 
 ## Version Roadmap｜版本路线
 
-### Version 1.0
+### Version 1.0 — Planar CCD-IK Motion Retargeting
 
-Initial real-time motion-capture version supporting body-driven digital shadow-puppet performance.
+Version 1.0 established the core real-time body-driven digital shadow-puppetry workflow. Kinect v2 skeletal data were mapped to planar digital shadow-puppet characters through a CCD-IK-based motion-retargeting process.
 
-基础实时动作映射版本，实现 Kinect v2 人体动作到数字皮影角色的实时控制。
+Core functions include:
 
-### Version 2.0
+* Kinect v2 markerless skeletal tracking;
+* Real-time body-driven digital shadow-puppet control;
+* Planar CCD-IK pose solving;
+* Multi-character and multi-scene performance;
+* Basic Windows-based interactive operation.
 
-Introduces planar retargeting and physics-mediated contact-preserving rendering to improve visible blocking, contact response, and post-contact recovery.
+v1.0 建立了系统最基础的实时动捕皮影工作流程。系统通过 Kinect v2 获取人体骨骼数据，并利用平面 CCD-IK 将人体动作实时重定向至二维数字皮影角色。
 
-新增平面动作重定向与物理介导的接触保持机制，改善角色与场景道具或其他角色之间的阻挡、接触响应和解除接触后的恢复表现。
+其主要功能包括：
 
-### Version 3.0
+* Kinect v2 无标记人体骨骼追踪；
+* 人体动作驱动数字皮影角色；
+* 平面 CCD-IK 姿态求解；
+* 多角色与多场景表演；
+* Windows 平台实时交互运行。
+
+### Transitional Development — Initial Performance Recording
+
+During the transition from Version 1.0 to Version 2.0, the system began to support basic performance recording. This early implementation provided the foundation for the more complete recording, export, and media-management functions included in Version 2.0.
+
+在 v1.0 向 v2.0 的过渡开发阶段，系统初步实现了表演录屏功能。该阶段的录制能力为 v2.0 中更加完整的视频录制、导出和媒体管理功能奠定了基础。
+
+### Version 2.0 — Physics-Mediated Contact-Preserving Rendering
+
+Version 2.0 extends the planar CCD-IK system by introducing a physics-mediated rendering layer. The visible shadow-puppet character follows the planar target pose while also responding to contact constraints from props, scene objects, and other characters.
+
+Major improvements include:
+
+* Physics-mediated character–object contact;
+* Physics-mediated character–character contact;
+* Visible blocking instead of direct pass-through;
+* Constrained displacement during contact;
+* Post-contact pose recovery;
+* Collision masking;
+* Contact-related audio feedback;
+* Improved performance recording;
+* More complete video export and media management.
+
+v2.0 在平面 CCD-IK 动作重定向基础上，进一步加入物理介导的渲染层，使最终可见的数字皮影角色在跟随目标姿态的同时，能够受到道具、场景物体和其他角色的接触约束。
+
+主要改进包括：
+
+* 角色与场景道具之间的物理接触；
+* 两个角色之间的物理接触；
+* 以可见阻挡替代直接穿透；
+* 接触过程中的受约束位移；
+* 接触解除后的姿态恢复；
+* 碰撞遮罩机制；
+* 接触音频反馈；
+* 录屏功能完善；
+* 更完整的视频导出和媒体管理。
+
+### Version 3.0 — Cloud Upload and QR-Code Sharing
+
+Version 3.0 will extend the system from local performance production to cloud-based dissemination.
 
 Planned functions include:
 
-* Performance video recording;
-* Video export;
-* Output file management;
-* Export progress feedback;
-* One-click sharing;
-* Additional usability improvements.
+* Uploading exported performance videos to cloud storage;
+* Automatic generation of shareable QR codes;
+* QR-code-based access on mobile devices;
+* Cross-device viewing and sharing;
+* Upload progress and status feedback;
+* Cloud media management;
+* Improved sharing workflow.
 
-3.0 版本将在实时表演基础上进一步增加视频录制、导出、文件管理和一键分享功能。
+v3.0 将在本地录制与导出基础上，进一步增加面向传播的云端功能。
+
+计划功能包括：
+
+* 将导出的皮影表演视频上传至云端；
+* 自动生成可分享的二维码；
+* 支持手机等移动设备扫码访问；
+* 支持跨设备观看与分享；
+* 显示上传进度与状态；
+* 云端媒体内容管理；
+* 优化整体分享流程。
+
 
 ## Asset Copyright｜素材版权
 
